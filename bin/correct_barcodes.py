@@ -269,7 +269,7 @@ def get_similar_bcs(query_bc, query_bc_qual, bc_trie, bc_probabilities, max_edit
     for cell_bc in list(get_mutated_bcs(query_bc, max_edit_dist)):
         if bc_trie.has_key(cell_bc):
             bc_probability = get_bc_probability(query_bc, query_bc_qual, cell_bc, bc_probabilities)
-            print("INFO: BARCODE_CHECK - ({} - {}) Probability {}".format(query_bc, cell_bc, bc_probability))
+            # print("INFO: BARCODE_CHECK - ({} - {}) Probability {}".format(query_bc, cell_bc, bc_probability))
 
             if bc_probability > 0:
                 similar_bcs.append((cell_bc, bc_probability))
@@ -328,8 +328,8 @@ def get_bc_probability(query_bc, query_bc_qual, potential_bc, bc_probabilities):
     if potential_bc in bc_probabilities:
         potential_bc_prob = bc_probabilities[potential_bc]
 
-    print("TOTAL_EDIT_PROBABILITY: {}".format(tot_edit_probability))
-    print("POTENTIAL_BC_PROB: {}".format(potential_bc_prob))
+    # print("TOTAL_EDIT_PROBABILITY: {}".format(tot_edit_probability))
+    # print("POTENTIAL_BC_PROB: {}".format(potential_bc_prob))
     return tot_edit_probability * potential_bc_prob
 
 
